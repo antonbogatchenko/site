@@ -1,14 +1,19 @@
 :root {
-  --background: #0a0a0a; /* deep graphite */
-  --foreground: #e6e6e6; /* light body */
-  --muted: #9aa0a6;
-  --card: #0f0f10;
-  --accent: #00e5ff; /* cyan */
-  --accent-2: #19ffb4; /* green */
-  --glow: 0 0 18px rgba(0, 229, 255, 0.35), 0 0 48px rgba(25, 255, 180, 0.15);
-  --ring: 0 0 0 1px rgba(0, 229, 255, 0.3);
-  --font-size-hero: clamp(36px, 10vw, 120px);
-  --letter-wide: 0.14em;
+  /* Early 2000s Corporate Color Palette */
+  --background: #f0f0f0; /* light gray background */
+  --foreground: #333333; /* dark gray text */
+  --muted: #666666;
+  --card: #ffffff;
+  --accent: #ff0000; /* corporate red */
+  --accent-2: #ffcc00; /* corporate yellow */
+  --accent-3: #0066cc; /* corporate blue */
+  --gradient-primary: linear-gradient(135deg, #ff0000, #ff6600);
+  --gradient-secondary: linear-gradient(135deg, #ffcc00, #ff9900);
+  --gradient-bg: linear-gradient(180deg, #ffffff, #f0f0f0);
+  --shadow-chunky: 3px 3px 0px #cccccc, 6px 6px 0px #999999;
+  --shadow-glow: 0 0 10px rgba(255, 0, 0, 0.3);
+  --font-size-hero: clamp(32px, 8vw, 64px);
+  --letter-wide: 0.05em;
 }
 
 html {
@@ -23,10 +28,10 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-geist-sans, Arial, Helvetica, sans-serif);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: var(--gradient-bg);
+  font-family: Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 * {
@@ -39,46 +44,69 @@ a {
   color: inherit;
   text-decoration: none;
 }
-html {
-  color-scheme: dark;
-}
-
-/* Headings */
+/* Headings - Early 2000s Style */
 h1,
 h2,
 h3 {
+  font-weight: bold;
+  text-shadow: 2px 2px 0px #cccccc;
+  color: var(--accent);
+}
+
+h1 {
+  font-size: 2.5em;
   text-transform: uppercase;
-  letter-spacing: var(--letter-wide);
+  letter-spacing: 0.1em;
 }
 
-/* Micro-animations */
-.hover-fade {
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-.hover-fade:hover {
-  opacity: 0.92;
-  transform: translateY(-1px);
+h2 {
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.neon-link {
-  position: relative;
+h3 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
-.neon-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  opacity: 0;
+
+/* Early 2000s Button Styles */
+.corporate-button {
+  background: var(--gradient-primary);
+  border: 3px outset #cccccc;
+  padding: 8px 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 1px 1px 0px #000000;
+  box-shadow: var(--shadow-chunky);
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.corporate-button:hover {
+  background: var(--gradient-secondary);
+  border: 3px inset #cccccc;
+  transform: translateY(1px);
+  box-shadow: 1px 1px 0px #cccccc, 3px 3px 0px #999999;
+}
+
+.corporate-button:active {
   transform: translateY(2px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  box-shadow: 0px 0px 0px #cccccc, 1px 1px 0px #999999;
 }
-.neon-link:hover::after {
-  opacity: 0.85;
-  transform: translateY(0);
-  filter: drop-shadow(var(--glow));
+
+/* Corporate Link Styles */
+.corporate-link {
+  color: var(--accent-3);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.corporate-link:hover {
+  color: var(--accent);
+  text-shadow: 1px 1px 0px #cccccc;
 }
 
 /* Hero background */

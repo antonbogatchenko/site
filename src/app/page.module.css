@@ -20,26 +20,20 @@
   }
 }
 
-/* Hero Section */
+/* Hero Section - 2000s Corporate Style */
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 80px 40px;
-  background-image: url("/background.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: var(--gradient-bg);
   position: relative;
 }
 
 @media (max-width: 768px) {
   .hero {
-    align-items: flex-start;
-    justify-content: flex-end;
     padding: 20px;
-    text-align: right;
   }
 }
 
@@ -50,7 +44,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(10, 10, 10, 0.6);
+  background: radial-gradient(
+      circle at 20% 80%,
+      rgba(255, 204, 0, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(circle at 80% 20%, rgba(255, 0, 0, 0.1) 0%, transparent 50%);
   z-index: 1;
 }
 
@@ -59,22 +58,10 @@
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  max-width: 780px;
-}
-
-@media (min-width: 769px) {
-  .heroContent {
-    align-items: flex-end;
-    text-align: right;
-  }
-}
-
-@media (max-width: 768px) {
-  .heroContent {
-    max-width: 100%;
-    gap: 20px;
-  }
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 800px;
 }
 
 /* Remove photo placeholder visuals in hero */
@@ -149,16 +136,17 @@
   }
 }
 
-/* Projects Section */
+/* Projects Section - 2000s Corporate Style */
 .projects {
-  padding: 120px 20px;
+  padding: 40px 0;
   max-width: 1200px;
   margin: 0 auto;
+  background: var(--gradient-bg);
 }
 
 @media (max-width: 768px) {
   .projects {
-    padding: 80px 20px;
+    padding: 20px 0;
   }
 }
 

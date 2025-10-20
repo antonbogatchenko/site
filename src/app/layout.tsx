@@ -25,48 +25,79 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} hero-noise`}
-      >
-        <div className="hero-bg" />
+      <body>
         <header
           style={{
-            position: "sticky",
-            top: 0,
-            zIndex: 10,
-            backdropFilter: "blur(6px)",
-            background:
-              "linear-gradient(180deg, rgba(10,10,10,.9), rgba(10,10,10,.6))",
-            padding: "14px 20px",
-            borderBottom: "1px solid rgba(255,255,255,.08)",
+            background: "var(--gradient-primary)",
+            padding: "10px 20px",
+            borderBottom: "4px solid #cccccc",
+            boxShadow: "0 4px 8px rgba(0,0,0,0.3)",
           }}
         >
-          <nav style={{ display: "flex", gap: 18, alignItems: "center" }}>
-            <a
-              href="/"
-              style={{ fontWeight: 700, letterSpacing: "0.16em" }}
-              className="neon-link"
+          <nav style={{ display: "flex", gap: 20, alignItems: "center" }}>
+            <div
+              style={{
+                background: "var(--gradient-secondary)",
+                padding: "8px 16px",
+                borderRadius: "8px",
+                border: "3px outset #cccccc",
+                boxShadow: "var(--shadow-chunky)",
+              }}
             >
-              ANTON
-            </a>
+              <a
+                href="/"
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "18px",
+                  color: "white",
+                  textShadow: "2px 2px 0px #000000",
+                  textTransform: "uppercase",
+                }}
+              >
+                ANTON BOGATCHENKO
+              </a>
+            </div>
             <div style={{ flex: 1 }} />
-            <a href="#projects" className="hover-fade neon-link">
-              Projects
+            <a
+              href="#projects"
+              className="corporate-button"
+              style={{ fontSize: "12px" }}
+            >
+              View Projects
             </a>
           </nav>
         </header>
         {children}
         <footer
           style={{
-            padding: "40px 20px",
-            borderTop: "1px solid rgba(255,255,255,0.08)",
-            marginTop: 80,
+            background: "var(--gradient-primary)",
+            padding: "20px",
+            borderTop: "4px solid #cccccc",
             textAlign: "center",
+            marginTop: "40px",
           }}
         >
-          <small style={{ color: "var(--muted)" }}>
-            © {new Date().getFullYear()} Anton Bogatchenko
-          </small>
+          <div
+            style={{
+              background: "white",
+              padding: "10px 20px",
+              borderRadius: "8px",
+              border: "3px outset #cccccc",
+              boxShadow: "var(--shadow-chunky)",
+              display: "inline-block",
+            }}
+          >
+            <small
+              style={{
+                color: "var(--foreground)",
+                fontWeight: "bold",
+                textShadow: "1px 1px 0px #cccccc",
+              }}
+            >
+              © {new Date().getFullYear()} Anton Bogatchenko - All Rights
+              Reserved
+            </small>
+          </div>
         </footer>
       </body>
     </html>
