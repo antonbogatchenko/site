@@ -42,34 +42,31 @@ export default function RootLayout({
           }}
         >
           <nav style={{ display: "flex", gap: 18, alignItems: "center" }}>
-            <Link
+            <a
               href="/"
               style={{ fontWeight: 700, letterSpacing: "0.16em" }}
               className="neon-link"
             >
               ANTON
-            </Link>
+            </a>
             <div style={{ flex: 1 }} />
-            <Link href="/about" className="hover-fade neon-link">
-              About
-            </Link>
-            <Link href="/works" className="hover-fade neon-link">
-              Works
-            </Link>
-            <Link href="/contacts" className="hover-fade neon-link">
-              Contacts
-            </Link>
+            <a href="#projects" className="hover-fade neon-link">
+              Projects
+            </a>
           </nav>
         </header>
         {children}
         <footer
           style={{
-            padding: "24px 20px",
-            borderTop: "1px solid #eee",
-            marginTop: 40,
+            padding: "40px 20px",
+            borderTop: "1px solid rgba(255,255,255,0.08)",
+            marginTop: 80,
+            textAlign: "center",
           }}
         >
-          <small>© {new Date().getFullYear()} Anton Bogatchenko</small>
+          <small style={{ color: "var(--muted)" }}>
+            © {new Date().getFullYear()} Anton Bogatchenko
+          </small>
         </footer>
       </body>
     </html>
