@@ -1,7 +1,12 @@
 import styles from "./page.module.css";
-import Image from "next/image";
+import ImageGallery from "./components/ImageGallery";
 
 export default function Home() {
+  const woodsImages = Array.from(
+    { length: 5 },
+    (_, i) => `/projects/woods/woods_${i + 1}.jpg`
+  );
+
   return (
     <div className={styles.page}>
       {/* Hero Section */}
@@ -41,19 +46,7 @@ export default function Home() {
         <h2 className={styles.sectionTitle}>PROJECTS</h2>
         <div className={styles.project}>
           <h3 className={styles.projectTitle}>WOODS</h3>
-          <div className={styles.projectImages}>
-            {Array.from({ length: 5 }, (_, i) => (
-              <div key={i} className={styles.imageContainer}>
-                <Image
-                  src={`/projects/woods/woods_${i + 1}.jpg`}
-                  alt={`Woods project image ${i + 1}`}
-                  fill
-                  className={styles.projectImage}
-                  sizes="(max-width: 768px) 150px, 200px"
-                />
-              </div>
-            ))}
-          </div>
+          <ImageGallery images={woodsImages} altPrefix="Woods project" />
         </div>
       </section>
     </div>
