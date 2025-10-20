@@ -1,17 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Anton Bogatchenko – Portfolio",
@@ -25,6 +14,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon/favicon-16x16.png"
+        />
+        <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+        <link rel="icon" href="/favicon/favicon.ico" />
+      </head>
       <body>
         <header
           style={{
@@ -44,7 +50,7 @@ export default function RootLayout({
                 boxShadow: "var(--shadow-chunky)",
               }}
             >
-              <a
+              <Link
                 href="/"
                 style={{
                   fontWeight: "bold",
@@ -55,7 +61,7 @@ export default function RootLayout({
                 }}
               >
                 ANTON BOGATCHENKO
-              </a>
+              </Link>
             </div>
             <div style={{ flex: 1 }} />
             <a
