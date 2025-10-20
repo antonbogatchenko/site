@@ -7,7 +7,7 @@
   --accent-2: #19ffb4; /* green */
   --glow: 0 0 18px rgba(0, 229, 255, 0.35), 0 0 48px rgba(25, 255, 180, 0.15);
   --ring: 0 0 0 1px rgba(0, 229, 255, 0.3);
-  --font-size-hero: clamp(44px, 10vw, 120px);
+  --font-size-hero: clamp(36px, 10vw, 120px);
   --letter-wide: 0.14em;
 }
 

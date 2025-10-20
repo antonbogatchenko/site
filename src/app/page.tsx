@@ -5,10 +5,7 @@ export default function Home() {
     <div className={styles.page}>
       {/* Hero Section */}
       <section className={styles.hero}>
-        <div
-          className={styles.heroContent}
-          style={{ alignItems: "flex-end", textAlign: "right" }}
-        >
+        <div className={styles.heroContent}>
           <h1
             className={styles.title}
             style={{ fontSize: "var(--font-size-hero)", lineHeight: 1.05 }}
@@ -18,11 +15,9 @@ export default function Home() {
             BOGATCHENKO
           </h1>
           <p className={styles.description}>
-            Multi-disciplinary professional based in Helsinki.
-            <br />
-            Experienced in hospitality, events, and creative content.
-            <br />
-            Available for projects locally and globally.
+            Multi-disciplinary professional based in Helsinki. Experienced in
+            hospitality, events, and creative content. Available for projects
+            locally and globally.
           </p>
           <div className={styles.contacts}>
             <a href="mailto:anton@antonbogatchenko.com" className="neon-link">

@@ -34,6 +34,15 @@
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 20px;
+    text-align: right;
+  }
+}
+
 .hero::before {
   content: "";
   position: absolute;
@@ -52,6 +61,20 @@
   flex-direction: column;
   gap: 24px;
   max-width: 780px;
+}
+
+@media (min-width: 769px) {
+  .heroContent {
+    align-items: flex-end;
+    text-align: right;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    max-width: 100%;
+    gap: 20px;
+  }
 }
 
 /* Remove photo placeholder visuals in hero */
@@ -91,6 +114,13 @@
   max-width: 600px;
 }
 
+@media (max-width: 768px) {
+  .description {
+    font-size: 16px;
+    max-width: 100%;
+  }
+}
+
 .contacts {
   display: flex;
   flex-direction: column;
@@ -103,11 +133,33 @@
   color: var(--foreground);
 }
 
+@media (min-width: 769px) {
+  .contacts {
+    align-items: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts {
+    align-items: flex-end;
+  }
+
+  .contacts a {
+    font-size: 14px;
+  }
+}
+
 /* Projects Section */
 .projects {
   padding: 120px 20px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 80px 20px;
+  }
 }
 
 .sectionTitle {
@@ -117,6 +169,13 @@
   color: var(--foreground);
   text-transform: uppercase;
   letter-spacing: var(--letter-wide);
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 36px;
+    margin-bottom: 60px;
+  }
 }
 
 .project {
@@ -131,10 +190,24 @@
   letter-spacing: var(--letter-wide);
 }
 
+@media (max-width: 768px) {
+  .projectTitle {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+}
+
 .projectImages {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .projectImages {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+  }
 }
 
 .imagePlaceholder {
@@ -271,11 +344,6 @@ a.secondary {
 }
 
 @media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
-
   .main {
     align-items: center;
   }
