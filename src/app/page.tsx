@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -42,8 +43,14 @@ export default function Home() {
           <h3 className={styles.projectTitle}>WOODS</h3>
           <div className={styles.projectImages}>
             {Array.from({ length: 5 }, (_, i) => (
-              <div key={i} className={styles.imagePlaceholder}>
-                <div className={styles.imageInner}></div>
+              <div key={i} className={styles.imageContainer}>
+                <Image
+                  src={`/projects/woods/woods_${i + 1}.jpg`}
+                  alt={`Woods project image ${i + 1}`}
+                  fill
+                  className={styles.projectImage}
+                  sizes="(max-width: 768px) 150px, 200px"
+                />
               </div>
             ))}
           </div>
