@@ -97,7 +97,7 @@ export default function Home() {
               >
                 <h2
                   style={{
-                    fontSize: "clamp(2.2em, 6vw, 3.8em)",
+                    fontSize: "clamp(2.2em, 6vw, 3.4em)",
                     color: "white",
                     textShadow: "2px 2px 0px #000000",
                     margin: 0,
