@@ -1,47 +1,55 @@
 /* Project Images Grid - 2000s Corporate Style */
+
 .projectImages {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding: "20px";
+  padding: 20px;
+  background: var(--gradient-bg);
+  border-radius: 10px;
 }
 
 @media (max-width: 768px) {
   .projectImages {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
+    padding: 10px;
   }
 }
 
 .imageContainer {
   aspect-ratio: 4/3;
-  border: 4px outset #cccccc;
-  border-radius: 8px;
+  border: 4px outset var(--muted);
+  border-radius: 10px;
   overflow: hidden;
   position: relative;
   transition: all 0.2s ease;
   cursor: pointer;
-  background: white;
-  box-shadow: 3px 3px 0px #cccccc, 6px 6px 0px #999999;
+  background: var(--card);
+  box-shadow: var(--shadow-chunky);
 }
 
 .imageContainer:hover {
   transform: translateY(-2px);
-  box-shadow: 5px 5px 0px #cccccc, 10px 10px 0px #999999;
-  border: 4px inset #cccccc;
+  box-shadow: 1px 1px 0px #cccccc, 3px 3px 0px #999999;
+  border: 4px inset var(--muted);
 }
 
 .projectImage {
   object-fit: cover;
-  transition: transform 0.25s ease;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  border-radius: 10px;
 }
 
 .imageContainer:hover .projectImage {
   transform: scale(1.02);
-  filter: saturate(1.2) contrast(1.1);
+  filter: saturate(1.2) contrast(1.1) drop-shadow(0 0 10px var(--accent));
 }
 
 /* Fullscreen Modal */
+
 .modal {
   position: fixed;
   top: 0;
@@ -64,9 +72,9 @@
   max-height: 800px;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(0, 229, 255, 0.3);
-  box-shadow: 0 0 18px rgba(0, 229, 255, 0.35),
-    0 0 48px rgba(25, 255, 180, 0.15);
+  border: 2px solid var(--accent-3);
+  box-shadow: var(--shadow-glow);
+  background: var(--card);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,9 +84,9 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  background: rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(0, 229, 255, 0.5);
-  color: #00e5ff;
+  background: var(--accent-3);
+  border: 2px solid var(--accent);
+  color: white;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -90,11 +98,13 @@
   cursor: pointer;
   z-index: 1001;
   transition: all 0.25s ease;
+  box-shadow: var(--shadow-chunky);
 }
 
 .closeButton:hover {
-  background: rgba(0, 229, 255, 0.2);
-  border-color: #00e5ff;
+  background: var(--accent);
+  border-color: var(--accent-3);
+  color: var(--card);
   transform: scale(1.1);
 }
 
@@ -105,22 +115,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--card);
+  border-radius: 10px;
 }
 
 .modalImage {
   object-fit: contain;
   max-width: 100%;
   max-height: 100%;
+  border-radius: 10px;
+  box-shadow: var(--shadow-chunky);
 }
 
 /* Navigation Arrows */
+
 .navButton {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(0, 229, 255, 0.5);
-  color: #00e5ff;
+  background: var(--accent-3);
+  border: 2px solid var(--accent);
+  color: white;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -131,6 +146,7 @@
   z-index: 1001;
   transition: all 0.25s ease;
   padding: 0;
+  box-shadow: var(--shadow-chunky);
 }
 
 .navButton svg {
@@ -140,25 +156,28 @@
 }
 
 .navButton:hover {
-  background: rgba(0, 229, 255, 0.2);
-  border-color: #00e5ff;
+  background: var(--accent);
+  border-color: var(--accent-3);
+  color: var(--card);
   transform: translateY(-50%) scale(1.1);
 }
 
 /* Image Counter */
+
 .imageCounter {
   position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(0, 229, 255, 0.5);
-  color: #00e5ff;
+  background: var(--accent-3);
+  border: 2px solid var(--accent);
+  color: white;
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 14px;
   font-weight: 500;
   z-index: 1001;
+  box-shadow: var(--shadow-chunky);
 }
 
 @media (max-width: 768px) {
