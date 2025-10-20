@@ -2,17 +2,18 @@ export default function ContactsPage() {
   return (
     <main style={{ maxWidth: 820, margin: "0 auto", padding: "40px 20px" }}>
       <h1>Contacts</h1>
-      <p>Feel free to reach out:</p>
-      <ul>
+      <p style={{ color: "var(--muted)" }}>Feel free to reach out:</p>
+      <ul style={{ listStyle: "none", padding: 0, marginTop: 12 }}>
         <li>
           Email:{" "}
-          <a href="mailto:hello@antonbogatchenko.com">
+          <a className="neon-link" href="mailto:hello@antonbogatchenko.com">
             hello@antonbogatchenko.com
           </a>
         </li>
         <li>
           GitHub:{" "}
           <a
+            className="neon-link"
             href="https://github.com/antonbogatchenko"
             target="_blank"
             rel="noreferrer"
@@ -23,6 +24,7 @@ export default function ContactsPage() {
         <li>
           LinkedIn:{" "}
           <a
+            className="neon-link"
             href="https://www.linkedin.com/in/antonbogatchenko/"
             target="_blank"
             rel="noreferrer"

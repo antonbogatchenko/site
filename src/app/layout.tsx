@@ -25,17 +25,40 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} hero-noise`}
+      >
+        <div className="hero-bg" />
         <header
-          style={{ padding: "16px 20px", borderBottom: "1px solid #eee" }}
+          style={{
+            position: "sticky",
+            top: 0,
+            zIndex: 10,
+            backdropFilter: "blur(6px)",
+            background:
+              "linear-gradient(180deg, rgba(10,10,10,.9), rgba(10,10,10,.6))",
+            padding: "14px 20px",
+            borderBottom: "1px solid rgba(255,255,255,.08)",
+          }}
         >
-          <nav style={{ display: "flex", gap: 16 }}>
-            <Link href="/" style={{ fontWeight: 600 }}>
-              Home
+          <nav style={{ display: "flex", gap: 18, alignItems: "center" }}>
+            <Link
+              href="/"
+              style={{ fontWeight: 700, letterSpacing: "0.16em" }}
+              className="neon-link"
+            >
+              ANTON
             </Link>
-            <Link href="/about">About</Link>
-            <Link href="/works">Works</Link>
-            <Link href="/contacts">Contacts</Link>
+            <div style={{ flex: 1 }} />
+            <Link href="/about" className="hover-fade neon-link">
+              About
+            </Link>
+            <Link href="/works" className="hover-fade neon-link">
+              Works
+            </Link>
+            <Link href="/contacts" className="hover-fade neon-link">
+              Contacts
+            </Link>
           </nav>
         </header>
         {children}
