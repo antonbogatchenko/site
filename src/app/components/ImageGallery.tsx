@@ -1,39 +1,42 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useCallback, useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./ImageGallery.module.css";
+import { ProjectItem } from "../types";
 
 interface ImageGalleryProps {
-  images: string[];
-  altPrefix: string;
+  items: ProjectItem[];
 }
 
-export default function ImageGallery({ images, altPrefix }: ImageGalleryProps) {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+export default function ImageGallery({ items }: ImageGalleryProps) {
+  const [selectedImage, setSelectedImage] = useState<ProjectItem | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  const openModal = (imageSrc: string) => {
-    const index = images.indexOf(imageSrc);
-    setCurrentIndex(index);
-    setSelectedImage(imageSrc);
-  };
+  const openModal = useCallback(
+    (image: ProjectItem) => {
+      const index = items.indexOf(image);
+      setCurrentIndex(index);
+      setSelectedImage(image);
+    },
+    [items]
+  );
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setSelectedImage(null);
-  };
+  }, []);
 
-  const goToNext = () => {
-    const nextIndex = (currentIndex + 1) % images.length;
+  const goToNext = useCallback(() => {
+    const nextIndex = (currentIndex + 1) % items.length;
     setCurrentIndex(nextIndex);
-    setSelectedImage(images[nextIndex]);
-  };
+    setSelectedImage(items[nextIndex]);
+  }, [currentIndex, items]);
 
-  const goToPrevious = () => {
-    const prevIndex = (currentIndex - 1 + images.length) % images.length;
+  const goToPrevious = useCallback(() => {
+    const prevIndex = (currentIndex - 1 + items.length) % items.length;
     setCurrentIndex(prevIndex);
-    setSelectedImage(images[prevIndex]);
-  };
+    setSelectedImage(items[prevIndex]);
+  }, [currentIndex, items]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -57,20 +60,20 @@ export default function ImageGallery({ images, altPrefix }: ImageGalleryProps) {
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [selectedImage, currentIndex, images]);
+  }, [selectedImage, currentIndex, items, goToNext, goToPrevious, closeModal]);
 
   return (
     <>
       <div className={styles.projectImages}>
-        {images.map((imageSrc, i) => (
+        {items.map((item, i) => (
           <div
             key={i}
             className={styles.imageContainer}
-            onClick={() => openModal(imageSrc)}
+            onClick={() => openModal(item)}
           >
             <Image
-              src={imageSrc}
-              alt={`${altPrefix} image ${i + 1}`}
+              src={item.src}
+              alt={item.description}
               fill
               className={styles.projectImage}
               sizes="(max-width: 768px) 200px, 300px"
@@ -91,7 +94,7 @@ export default function ImageGallery({ images, altPrefix }: ImageGalleryProps) {
             </button>
 
             {/* Navigation Arrows */}
-            {images.length > 1 && (
+            {items.length > 1 && (
               <>
                 <button
                   className={styles.navButton}
@@ -139,16 +142,16 @@ export default function ImageGallery({ images, altPrefix }: ImageGalleryProps) {
             )}
 
             {/* Image Counter */}
-            {images.length > 1 && (
+            {items.length > 1 && (
               <div className={styles.imageCounter}>
-                {currentIndex + 1} / {images.length}
+                {currentIndex + 1} / {items.length}
               </div>
             )}
 
             <div className={styles.modalImageContainer}>
               <Image
-                src={selectedImage}
-                alt={`${altPrefix} image ${currentIndex + 1}`}
+                src={selectedImage.src}
+                alt={selectedImage.description}
                 fill
                 className={styles.modalImage}
                 sizes="100vw"

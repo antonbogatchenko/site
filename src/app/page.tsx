@@ -1,13 +1,9 @@
 import styles from "./page.module.css";
 import ImageGallery from "./components/ImageGallery";
 import Image from "next/image";
+import { projects } from "./data";
 
 export default function Home() {
-  const woodsImages = Array.from(
-    { length: 5 },
-    (_, i) => `/projects/woods/woods_${i + 1}.jpg`
-  );
-
   return (
     <div className={styles.page}>
       {/* Hero Section */}
@@ -195,40 +191,42 @@ export default function Home() {
           >
             🎨 MY AWESOME PROJECTS
           </h2>
-          <div className={styles.project}>
-            <div
-              style={{
-                background: "var(--gradient-secondary)",
-                padding: "15px",
-                borderRadius: "8px",
-                border: "3px outset #cccccc",
-                marginBottom: "20px",
-                textAlign: "center",
-              }}
-            >
-              <h3
-                className={styles.projectTitle}
+          {projects.map((project) => (
+            <div key={project.name} className={styles.project}>
+              <div
                 style={{
-                  color: "white",
-                  textShadow: "2px 2px 0px #000000",
-                  margin: 0,
+                  background: "var(--gradient-secondary)",
+                  padding: "15px",
+                  borderRadius: "8px",
+                  border: "3px outset #cccccc",
+                  marginBottom: "20px",
+                  textAlign: "center",
                 }}
               >
-                🌲 WOODS PROJECT
-              </h3>
-              <p
-                style={{
-                  color: "white",
-                  margin: "10px 0 0 0",
-                  fontWeight: "bold",
-                  textShadow: "1px 1px 0px #000000",
-                }}
-              >
-                A Collection of Creative Works
-              </p>
+                <h3
+                  className={styles.projectTitle}
+                  style={{
+                    color: "white",
+                    textShadow: "2px 2px 0px #000000",
+                    margin: 0,
+                  }}
+                >
+                  {project.name}
+                </h3>
+                <p
+                  style={{
+                    color: "white",
+                    margin: "10px 0 0 0",
+                    fontWeight: "bold",
+                    textShadow: "1px 1px 0px #000000",
+                  }}
+                >
+                  {project.description}
+                </p>
+              </div>
+              <ImageGallery items={project.items} />
             </div>
-            <ImageGallery images={woodsImages} altPrefix="Woods project" />
-          </div>
+          ))}
         </div>
       </section>
     </div>
