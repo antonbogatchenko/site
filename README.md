@@ -4,9 +4,9 @@ Static portfolio for Anton Bogatchenko using Next.js App Router, exported as sta
 
 ## Scripts
 
-- `npm run dev` – local dev server
-- `npm run build` – build the app
-- `npm run export` – static export to `out/`
+- `yarn run dev` – local dev server
+- `yarn run build` – build the app
+- `yarn run export` – static export to `out/`
 
 ## Deploy to GitHub Pages
 
