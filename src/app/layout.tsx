@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { PageHeader } from "./components/PageHeader";
+import { PageFooter } from "./components/PageFooter";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -32,79 +33,9 @@ export default function RootLayout({
         <link rel="icon" href="/favicon/favicon.ico" />
       </head>
       <body>
-        <header
-          style={{
-            background: "var(--gradient-primary)",
-            padding: "10px 20px",
-            borderBottom: "4px solid #cccccc",
-            boxShadow: "0 4px 8px rgba(0,0,0,0.3)",
-          }}
-        >
-          <nav style={{ display: "flex", gap: 20, alignItems: "center" }}>
-            <div
-              style={{
-                background: "var(--gradient-secondary)",
-                padding: "8px 16px",
-                borderRadius: "8px",
-                border: "3px outset #cccccc",
-                boxShadow: "var(--shadow-chunky)",
-              }}
-            >
-              <Link
-                href="/"
-                style={{
-                  fontWeight: "bold",
-                  fontSize: "18px",
-                  color: "white",
-                  textShadow: "2px 2px 0px #000000",
-                  textTransform: "uppercase",
-                }}
-              >
-                ANTON BOGATCHENKO
-              </Link>
-            </div>
-            <div style={{ flex: 1 }} />
-            <a
-              href="#projects"
-              className="corporate-button"
-              style={{ fontSize: "12px" }}
-            >
-              View Projects
-            </a>
-          </nav>
-        </header>
+        <PageHeader />
         {children}
-        <footer
-          style={{
-            background: "var(--gradient-primary)",
-            padding: "20px",
-            borderTop: "4px solid #cccccc",
-            textAlign: "center",
-            marginTop: "40px",
-          }}
-        >
-          <div
-            style={{
-              background: "white",
-              padding: "10px 20px",
-              borderRadius: "8px",
-              border: "3px outset #cccccc",
-              boxShadow: "var(--shadow-chunky)",
-              display: "inline-block",
-            }}
-          >
-            <small
-              style={{
-                color: "var(--foreground)",
-                fontWeight: "bold",
-                textShadow: "1px 1px 0px #cccccc",
-              }}
-            >
-              © {new Date().getFullYear()} Anton Bogatchenko - All Rights
-              Reserved
-            </small>
-          </div>
-        </footer>
+        <PageFooter />
       </body>
     </html>
   );

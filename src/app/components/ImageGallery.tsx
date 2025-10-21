@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState, useEffect } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./ImageGallery.module.css";
 import { ProjectItem } from "../types";
@@ -9,7 +9,7 @@ interface ImageGalleryProps {
   items: ProjectItem[];
 }
 
-export default function ImageGallery({ items }: ImageGalleryProps) {
+export const ImageGallery: React.FC<ImageGalleryProps> = ({ items }) => {
   const [selectedImage, setSelectedImage] = useState<ProjectItem | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
@@ -163,4 +163,4 @@ export default function ImageGallery({ items }: ImageGalleryProps) {
       )}
     </>
   );
-}
+};
