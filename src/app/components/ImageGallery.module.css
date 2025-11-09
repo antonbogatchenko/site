@@ -1,51 +1,43 @@
-/* Project Images Grid - 2000s Corporate Style */
+/* Project Images Grid - retro catalog */
 
 .projectImages {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  background: var(--gradient-bg);
-  border-radius: 10px;
-}
-
-@media (max-width: 768px) {
-  .projectImages {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    padding: 10px;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: clamp(12px, 2vw, 18px);
 }
 
 .imageContainer {
-  aspect-ratio: 4/3;
-  border: 4px outset var(--muted);
-  border-radius: 10px;
+  aspect-ratio: 4 / 3;
+  border: var(--stroke-width) solid var(--ink);
+  border-radius: 18px;
   overflow: hidden;
   position: relative;
-  transition: all 0.2s ease;
+  width: 100%;
   cursor: pointer;
   background: var(--card);
-  box-shadow: var(--shadow-chunky);
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.2s ease;
 }
 
 .imageContainer:hover {
-  transform: translateY(-2px);
-  box-shadow: 1px 1px 0px #cccccc, 3px 3px 0px #999999;
-  border: 4px inset var(--muted);
+  transform: translate(-4px, -4px) rotate(-2deg);
+  box-shadow: 8px 8px 0 var(--ink);
 }
 
 .projectImage {
+  position: absolute;
+  inset: 0;
   object-fit: cover;
   width: 100%;
   height: 100%;
-  transition: transform 0.25s ease, filter 0.25s ease;
-  border-radius: 10px;
+  filter: saturate(1.1) contrast(1.05);
 }
 
-.imageContainer:hover .projectImage {
-  transform: scale(1.02);
-  filter: saturate(1.2) contrast(1.1) drop-shadow(0 0 10px var(--accent));
+@supports not (aspect-ratio: 1 / 1) {
+  .imageContainer {
+    height: 0;
+    padding-bottom: 75%;
+  }
 }
 
 /* Fullscreen Modal */
@@ -60,7 +52,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: var(--layer-modal);
   backdrop-filter: blur(8px);
 }
 
@@ -70,11 +62,11 @@
   height: 90vh;
   max-width: 1200px;
   max-height: 800px;
-  border-radius: 12px;
+  border-radius: 24px;
   overflow: hidden;
-  border: 2px solid var(--accent-3);
-  box-shadow: var(--shadow-glow);
-  background: var(--card);
+  border: var(--stroke-width) solid var(--ink);
+  box-shadow: 0 28px 54px rgba(27, 20, 37, 0.45);
+  background: linear-gradient(135deg, rgba(105, 213, 255, 0.25), #ffffff 65%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,28 +76,25 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  background: var(--accent-3);
-  border: 2px solid var(--accent);
-  color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  background: var(--accent-pink);
+  border: var(--stroke-width) solid var(--ink);
+  color: var(--ink);
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
   cursor: pointer;
-  z-index: 1001;
+  z-index: calc(var(--layer-modal) + 1);
   transition: all 0.25s ease;
-  box-shadow: var(--shadow-chunky);
+  box-shadow: 6px 6px 0 var(--ink);
 }
 
 .closeButton:hover {
-  background: var(--accent);
-  border-color: var(--accent-3);
-  color: var(--card);
-  transform: scale(1.1);
+  transform: translate(-3px, -3px) rotate(-5deg);
 }
 
 .modalImageContainer {
@@ -123,8 +112,8 @@
   object-fit: contain;
   max-width: 100%;
   max-height: 100%;
-  border-radius: 10px;
-  box-shadow: var(--shadow-chunky);
+  border-radius: 20px;
+  box-shadow: 0 18px 36px rgba(27, 20, 37, 0.35);
 }
 
 /* Navigation Arrows */
@@ -133,20 +122,20 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--accent-3);
-  border: 2px solid var(--accent);
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  background: var(--accent-yellow);
+  border: var(--stroke-width) solid var(--ink);
+  color: var(--ink);
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 1001;
+  z-index: calc(var(--layer-modal) + 1);
   transition: all 0.25s ease;
   padding: 0;
-  box-shadow: var(--shadow-chunky);
+  box-shadow: 6px 6px 0 var(--ink);
 }
 
 .navButton svg {
@@ -156,10 +145,7 @@
 }
 
 .navButton:hover {
-  background: var(--accent);
-  border-color: var(--accent-3);
-  color: var(--card);
-  transform: translateY(-50%) scale(1.1);
+  transform: translate(-6px, -6px) scale(1.05);
 }
 
 /* Image Counter */
@@ -169,45 +155,45 @@
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--accent-3);
-  border: 2px solid var(--accent);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 500;
-  z-index: 1001;
-  box-shadow: var(--shadow-chunky);
+  background: var(--accent-blue);
+  border: var(--stroke-width) solid var(--ink);
+  color: var(--ink);
+  padding: 10px 26px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  z-index: calc(var(--layer-modal) + 1);
+  box-shadow: 4px 4px 0 var(--ink);
 }
 
 @media (max-width: 768px) {
   .modalContent {
     width: 95vw;
     height: 95vh;
-    border-radius: 8px;
+    border-radius: 16px;
   }
 
   .closeButton {
-    top: 15px;
-    right: 15px;
-    width: 35px;
-    height: 35px;
-    font-size: 20px;
+    top: 18px;
+    right: 18px;
+    width: 46px;
+    height: 46px;
+    font-size: 26px;
   }
 
   .navButton {
-    width: 40px;
-    height: 40px;
+    width: 46px;
+    height: 46px;
   }
 
   .navButton svg {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
   }
 
   .imageCounter {
     bottom: 15px;
-    font-size: 12px;
-    padding: 6px 12px;
+    font-size: 13px;
+    padding: 8px 18px;
   }
 }

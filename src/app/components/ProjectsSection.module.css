@@ -1,0 +1,72 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 7vw, 60px);
+  align-items: center;
+}
+
+.grid {
+  width: min(1180px, 100%);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(20px, 4vw, 40px);
+}
+
+.card {
+  position: relative;
+  border: var(--stroke-width) solid var(--ink);
+  border-radius: var(--border-radius-lg);
+  padding: clamp(24px, 3vw, 40px);
+  background: linear-gradient(
+    160deg,
+    var(--card-accent, rgba(255, 228, 94, 0.35)),
+    #ffffff 66%
+  );
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.4vw, 24px);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: var(--border-radius-sm);
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 14px,
+    rgba(0, 0, 0, 0.05) 14px,
+    rgba(0, 0, 0, 0.05) 16px
+  );
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2vw, 20px);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.name {
+  flex: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: "Bangers", "Comic Sans MS", cursive;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--foreground);
+}

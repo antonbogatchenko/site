@@ -1,0 +1,12 @@
+.footer {
+  padding: 24px clamp(16px, 4vw, 56px);
+  background: linear-gradient(135deg, rgba(122, 255, 201, 0.4), #ffffff);
+  border-top: var(--stroke-width) solid var(--ink);
+}
+
+.text {
+  display: block;
+  font-size: 13px;
+  color: var(--ink);
+  text-align: center;
+}

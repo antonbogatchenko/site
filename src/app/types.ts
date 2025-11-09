@@ -7,4 +7,5 @@ export interface Project {
   name: string;
   description: string;
   items: ProjectItem[];
+  accent?: string;
 }
