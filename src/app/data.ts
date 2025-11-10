@@ -6,9 +6,9 @@ export const projects: Project[] = [
     description: "Modern reflection of an old moral",
     accent: "#ffe45e",
     items: [
-      { src: "/projects/Maria/maria-3.jpg", description: "Maria 01" },
-      { src: "/projects/Maria/maria-5.jpg", description: "Maria 02" },
-      { src: "/projects/Maria/maria-15.jpg", description: "Maria 03" },
+      { src: "/projects/Maria/maria-3.jpeg", description: "Maria 01" },
+      { src: "/projects/Maria/maria-5.jpeg", description: "Maria 02" },
+      { src: "/projects/Maria/maria-15.jpeg", description: "Maria 03" },
     ],
   },
   {
