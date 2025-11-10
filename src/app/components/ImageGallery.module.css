@@ -8,15 +8,12 @@
 
 .imageContainer {
   aspect-ratio: 4 / 3;
-  border: var(--stroke-width) solid var(--ink);
-  border-radius: 18px;
   overflow: hidden;
   position: relative;
   cursor: pointer;
   background: var(--card);
-  box-shadow: 4px 4px 0 var(--ink);
   transition: transform 0.2s ease;
-  height: 250px;
+  height: 280px;
 }
 
 .imageContainer:hover {

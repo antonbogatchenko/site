@@ -5,25 +5,19 @@
   align-items: center;
 }
 
-.grid {
-  width: min(1180px, 100%);
-}
-
 .card {
   position: relative;
-  border: var(--stroke-width) solid var(--ink);
-  border-radius: var(--border-radius-lg);
   padding: clamp(24px, 3vw, 40px);
   background: linear-gradient(
     160deg,
     var(--card-accent, rgba(255, 228, 94, 0.35)),
     #ffffff 66%
   );
-  box-shadow: var(--shadow-soft);
   display: flex;
   flex-direction: column;
   gap: clamp(16px, 2.4vw, 24px);
   margin-bottom: clamp(20px, 4vw, 40px);
+  min-height: 100vh;
 }
 
 .card::after {
@@ -59,8 +53,7 @@
 .name {
   flex: 1;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-family: "Bangers", "Comic Sans MS", cursive;
+  font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
 }
 
 .description {

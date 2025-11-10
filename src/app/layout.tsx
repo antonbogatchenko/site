@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { PageHeader } from "./components/PageHeader";
 import { PageFooter } from "./components/PageFooter";
 import "./globals.css";
 
@@ -33,8 +32,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon/favicon.ico" />
       </head>
       <body>
-        <PageHeader />
-        {children}
+        <main>{children}</main>
         <PageFooter />
       </body>
     </html>

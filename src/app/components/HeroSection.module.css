@@ -1,25 +1,21 @@
 .section {
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 
 .grid {
-  width: min(1180px, 100%);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(18px, 4vw, 36px);
 }
 
 .card {
   position: relative;
   background: var(--card);
-  border: var(--stroke-width) solid var(--ink);
-  border-radius: var(--border-radius-lg);
   padding: clamp(24px, 3vw, 40px);
   box-shadow: var(--shadow-soft);
   display: flex;
   flex-direction: column;
   gap: 18px;
+  flex: 1;
 }
 
 .primaryCard {
@@ -78,7 +74,7 @@
 }
 
 .subtitle {
-  font-family: "Work Sans", "Helvetica Neue", sans-serif;
+  font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.24em;
   font-weight: 600;

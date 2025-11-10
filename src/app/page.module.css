@@ -1,14 +1,8 @@
 .page {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xxl);
+
   min-height: 100vh;
-  padding: var(--space-4xl) var(--space-lg);
   background: var(--surface-primary);
   color: var(--text-primary);
-}
-@media (min-width: 960px) {
-  .page {
-    padding: var(--space-5xl) var(--space-3xl);
-  }
 }

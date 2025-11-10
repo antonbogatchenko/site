@@ -5,12 +5,10 @@ import styles from "./PageHeader.module.css";
 export const PageHeader: React.FC = () => (
   <header className={styles.header}>
     <nav className={styles.nav}>
-      <div className={styles.brand}>
-        <Link href="/" className={styles.title}>
-          Anton Bogatchenko
-        </Link>
-      </div>
-      <a href="#projects" className={`corporate-button ${styles.cta}`}>
+      <Link href="/" className={styles.title}>
+        Anton Bogatchenko
+      </Link>
+      <a href="#projects" className={styles.cta}>
         View projects
       </a>
     </nav>

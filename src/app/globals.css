@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Work+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap");
 
 :root {
   /* Retro catalog palette */
@@ -27,6 +27,7 @@
   --text-primary: var(--foreground);
   --layer-overlay: 1100;
   --layer-modal: 1200;
+  --page-header-height: 124px;
 
   /* Spacing scale */
   --space-lg: clamp(18px, 2.6vw, 32px);
@@ -64,9 +65,18 @@ body {
       transparent 50%
     ),
     var(--gradient-bg);
-  font-family: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Instrument Serif", "Georgia", "Times New Roman", serif;
   font-size: 15px;
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 * {
@@ -85,7 +95,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Bangers", "Comic Sans MS", cursive;
+  font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
   color: var(--ink);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -111,7 +121,7 @@ h3 {
   justify-content: center;
   padding: 12px 26px;
   border-radius: 999px;
-  font-family: "Bangers", "Comic Sans MS", cursive;
+  font-family: "Instrument Serif", "Georgia", "Times New Roman", serif;
   font-size: 18px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -152,7 +162,7 @@ h3 {
   place-items: center;
   background: var(--accent-yellow);
   color: var(--ink);
-  font-family: "Bangers", "Comic Sans MS", cursive;
+  font-family: "Instrument Serif", "Georgia", "Times New Roman", serif;
   font-size: 26px;
   letter-spacing: 0.08em;
   border: var(--stroke-width) solid var(--ink);
@@ -184,7 +194,7 @@ h3 {
   border-radius: 999px;
   border: var(--stroke-width) solid var(--ink);
   background: var(--accent-blue);
-  font-family: "Bangers", "Comic Sans MS", cursive;
+  font-family: "Instrument Serif", "Georgia", "Times New Roman", serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink);
