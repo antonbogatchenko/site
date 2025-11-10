@@ -1,8 +1,8 @@
 /* Project Images Grid - retro catalog */
 
 .projectImages {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: clamp(12px, 2vw, 18px);
 }
 
@@ -12,11 +12,11 @@
   border-radius: 18px;
   overflow: hidden;
   position: relative;
-  width: 100%;
   cursor: pointer;
   background: var(--card);
   box-shadow: 4px 4px 0 var(--ink);
   transition: transform 0.2s ease;
+  height: 250px;
 }
 
 .imageContainer:hover {
