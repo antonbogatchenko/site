@@ -14,7 +14,7 @@ export const projects: Project[] = [
   {
     name: "Ernest",
     description: "Images for Tinder profile",
-    accent: "#69d5ff",
+    accent: "#69d5",
     items: [
       { src: "/projects/Ernest/Ernest-2.jpg", description: "Ernest 02" },
       { src: "/projects/Ernest/Ernest-5.jpg", description: "Ernest 05" },
@@ -23,7 +23,7 @@ export const projects: Project[] = [
   {
     name: "Lobo",
     description: "Food photography for a Lobo restaurant in Helsinki, Finland.",
-    accent: "#69d5ff",
+    accent: "#a6a675",
     items: [
       {
         src: "/projects/Lobo/lobo_boreal_25-07-hero.jpg",
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     name: "Magu",
     description:
       "Dinner party photos for a Magu restaurnat in Helsinki, Finland.",
-    accent: "#69d5ff",
+    accent: "#af5597",
     items: [
       {
         src: "/projects/Magu/Magu_dinner_people_-01.jpg",

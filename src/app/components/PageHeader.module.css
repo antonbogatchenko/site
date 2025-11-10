@@ -1,14 +1,11 @@
 .header {
   position: sticky;
   top: 0;
-  background: linear-gradient(135deg, rgb(247, 83, 12, 0.6), #ffffff);
+  background: black;
   padding: 10px clamp(16px, 4vw, 56px);
-  box-shadow: 0 12px 0 rgba(27, 20, 37, 0.18);
-  border: var(--stroke-width) solid var(--ink);
   border-right: none;
   border-left: none;
   z-index: var(--layer-overlay, 1100);
-  align-self: stretch;
 }
 
 .nav {
@@ -20,14 +17,14 @@
 }
 
 .title {
-  font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 32px;
   font-weight: bold;
-  color: var(--ink);
-  text-transform: uppercase;
+  color: rgb(68, 255, 63);
 }
 
 .cta {
+  font-family: Arial, sans-serif;
   font-size: 18px;
-  letter-spacing: 0.12em;
+  color: rgb(68, 255, 63);
 }

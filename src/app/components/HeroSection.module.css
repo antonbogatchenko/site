@@ -5,6 +5,9 @@
 }
 
 .grid {
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 .card {
@@ -96,6 +99,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  font: Arial, sans-serif;
 }
 
 .highlightCard {
