@@ -6,27 +6,25 @@ import { HeroHeader } from "./headers";
 export const HeroSection: React.FC = () => {
   return (
     <section className={styles.section}>
-      <article className={styles.grid}>
+      <article className={styles.hero}>
         <div className={styles.actions}>
-          <a href="mailto:anton@antonbogatchenko.com">📧 Email Me</a>
+          <a href="mailto:anton@antonbogatchenko.com">email</a>
           <a
             href="https://instagram.com/antonbogatchenko"
             target="_blank"
             rel="noreferrer"
           >
-            📷 Instagram
+            instagram
           </a>
         </div>
-        <div className={styles.imageFrame}>
-          <Image
-            src="/me.jpg"
-            alt="Anton Bogatchenko"
-            fill
-            sizes="(max-width: 900px) 60vw, 360px"
-            className={styles.image}
-            priority
-          />
-        </div>
+        <Image
+          src="/me.jpg"
+          alt="Anton Bogatchenko"
+          width={360}
+          height={480}
+          className={styles.image}
+          priority
+        />
         <div className={styles.details}>
           <p className={styles.title}>Anton Bogatchenko</p>
           <p className={styles.description}>

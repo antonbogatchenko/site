@@ -1,132 +1,31 @@
 .section {
-  min-height: 120vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.grid {
+.hero {
   flex: 1;
   display: flex;
   align-items: center;
-}
-
-.card {
-  position: relative;
-  background: var(--card);
-  padding: clamp(24px, 3vw, 40px);
-  box-shadow: var(--shadow-soft);
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  flex: 1;
-}
-
-.primaryCard {
-  grid-column: span 2;
-  background: linear-gradient(135deg, rgba(105, 213, 255, 0.24), #ffffff 55%);
-}
-
-.primaryContent {
-  display: flex;
-  gap: clamp(20px, 3.5vw, 38px);
-  align-items: center;
-}
-
-.imageFrame {
-  position: relative;
-  width: clamp(220px, 32vw, 360px);
-  aspect-ratio: 8 / 9;
-  border: var(--stroke-width) solid var(--ink);
-  border-radius: var(--border-radius-sm);
-  overflow: hidden;
-  background: var(--card);
-  box-shadow: var(--shadow-chunky);
-  flex-basis: 150px;
-  flex-shrink: 0;
-}
-
-.image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-@supports not (aspect-ratio: 1 / 1) {
-  .imageFrame {
-    height: clamp(260px, 52vw, 400px);
-  }
-}
-
-@media (max-width: 900px) {
-  .primaryCard {
-    grid-column: auto;
-  }
-
-  .primaryContent {
-    flex-direction: column;
-  }
-}
-
-.details {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  color: var(--ink);
-}
-
-.subtitle {
-  font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.24em;
-  font-weight: 600;
-  color: var(--muted);
-}
-
-.title {
-  font-size: clamp(34px, 7vw, 62px);
-  line-height: 0.95;
-}
-
-.description {
-  font-size: 18px;
-  line-height: 1.7;
-  color: var(--foreground);
+  justify-content: center;
+  gap: 16px;
 }
 
 .actions {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 12px;
-  font: Arial, sans-serif;
+  font-family: var(--font-primary);
+  margin-right: auto;
+  margin-left: 5px;
 }
 
-.highlightCard {
-  background: linear-gradient(135deg, rgba(255, 89, 168, 0.25), #ffffff 60%);
+.details {
+  flex-basis: 50%;
 }
 
-.list {
-  display: grid;
-  gap: 10px;
-  font-weight: 600;
-  color: var(--ink);
-}
-
-.listItem {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px;
-}
-
-.listItem::before {
-  content: "✶";
-  color: var(--accent-pink);
-}
-
-@media (max-width: 720px) {
-  .actions {
-    justify-content: center;
-  }
+.title {
+  font-size: 48px;
+  font-weight: bold;
 }
