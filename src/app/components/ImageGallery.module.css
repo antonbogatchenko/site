@@ -1,4 +1,10 @@
 /* Project Images Grid - retro catalog */
+:root {
+  --card: #ffffff;
+  --ink: #1b1425;
+  --stroke-width: 4px;
+  --layer-modal: 1200;
+}
 
 .projectImages {
   display: flex;
@@ -17,8 +23,7 @@
 }
 
 .imageContainer:hover {
-  transform: translate(-4px, -4px) rotate(-2deg);
-  box-shadow: 8px 8px 0 var(--ink);
+  border: 1px solid var(--green);
 }
 
 .projectImage {
@@ -73,7 +78,7 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  background: var(--accent-pink);
+  background: var(--orange);
   border: var(--stroke-width) solid var(--ink);
   color: var(--ink);
   width: 54px;
@@ -87,11 +92,10 @@
   cursor: pointer;
   z-index: calc(var(--layer-modal) + 1);
   transition: all 0.25s ease;
-  box-shadow: 6px 6px 0 var(--ink);
 }
 
 .closeButton:hover {
-  transform: translate(-3px, -3px) rotate(-5deg);
+  background: red;
 }
 
 .modalImageContainer {
@@ -119,7 +123,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--accent-yellow);
+  background: var(--orange);
   border: var(--stroke-width) solid var(--ink);
   color: var(--ink);
   width: 60px;
@@ -132,7 +136,6 @@
   z-index: calc(var(--layer-modal) + 1);
   transition: all 0.25s ease;
   padding: 0;
-  box-shadow: 6px 6px 0 var(--ink);
 }
 
 .navButton svg {
@@ -142,7 +145,7 @@
 }
 
 .navButton:hover {
-  transform: translate(-6px, -6px) scale(1.05);
+  background: #5353e6;
 }
 
 /* Image Counter */
@@ -152,7 +155,7 @@
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--accent-blue);
+  background: var(--green);
   border: var(--stroke-width) solid var(--ink);
   color: var(--ink);
   padding: 10px 26px;
