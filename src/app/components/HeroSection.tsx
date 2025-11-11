@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./HeroSection.module.css";
-import { PageHeader } from "./PageHeader";
 
 export const HeroSection: React.FC = () => {
   return (
@@ -36,7 +35,6 @@ export const HeroSection: React.FC = () => {
           </p>
         </div>
       </article>
-      <PageHeader />
     </section>
   );
 };

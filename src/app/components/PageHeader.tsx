@@ -9,7 +9,7 @@ export const PageHeader: React.FC = () => (
         Anton Bogatchenko
       </Link>
       <a href="#projects" className={styles.cta}>
-        View projects
+        view projects
       </a>
     </nav>
   </header>

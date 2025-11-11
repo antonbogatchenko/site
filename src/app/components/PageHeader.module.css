@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   background: black;
-  padding: 10px clamp(16px, 4vw, 56px);
+  padding: 16px;
   border-right: none;
   border-left: none;
   z-index: var(--layer-overlay, 1100);
@@ -17,14 +17,14 @@
 }
 
 .title {
-  font-family: Arial, sans-serif;
   font-size: 32px;
   font-weight: bold;
-  color: rgb(68, 255, 63);
+  color: var(--orange);
+  font-family: var(--font-primary);
 }
 
 .cta {
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  color: rgb(68, 255, 63);
+  font-size: 20px;
+  color: var(--orange);
+  font-family: var(--font-primary);
 }
