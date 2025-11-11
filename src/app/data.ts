@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     name: "By The Broken Trough",
     description: "Modern reflection of an old moral",
-    accent: "#ffe45e",
+    accent: "#ff5e5e",
     items: [
       { src: "/projects/Maria/maria-3.jpeg", description: "Maria 01" },
       { src: "/projects/Maria/maria-5.jpeg", description: "Maria 02" },
@@ -14,7 +14,7 @@ export const projects: Project[] = [
   {
     name: "Ernest",
     description: "Images for Tinder profile",
-    accent: "#69d5",
+    accent: "#8db6ec",
     items: [
       { src: "/projects/Ernest/Ernest-2.jpg", description: "Ernest 02" },
       { src: "/projects/Ernest/Ernest-5.jpg", description: "Ernest 05" },
