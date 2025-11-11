@@ -2,9 +2,11 @@ import React from "react";
 import { ImageGallery } from "./ImageGallery";
 import { projects } from "../data";
 import styles from "./ProjectsSection.module.css";
+import { ProjectsHeader } from "./headers";
 
 export const ProjectsSection: React.FC = () => (
   <section id="projects" className={styles.section}>
+    <ProjectsHeader />
     <div className={styles.grid}>
       {projects.map((project) => (
         <article

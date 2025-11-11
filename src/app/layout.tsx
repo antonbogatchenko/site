@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { PageFooter } from "./components/PageFooter";
 import "./globals.css";
-import { PageHeader } from "./components/PageHeader";
 
 export const metadata: Metadata = {
   title: "Anton Bogatchenko – Portfolio",
@@ -33,7 +32,6 @@ export default function RootLayout({
         <link rel="icon" href="/favicon/favicon.ico" />
       </head>
       <body>
-        <PageHeader />
         <main>{children}</main>
         <PageFooter />
       </body>

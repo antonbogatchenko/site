@@ -8,6 +8,7 @@
   --grey: rgb(128, 128, 128);
   --font-basic: "Instrument Serif", "Georgia", "Times New Roman", serif;
   --font-primary: Arial, sans-serif;
+  --header-height: 80px;
 }
 
 html {

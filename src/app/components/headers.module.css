@@ -1,0 +1,35 @@
+.header {
+  position: sticky;
+  background: black;
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  font-family: var(--font-primary);
+}
+
+.heroHeader {
+  color: var(--green);
+  bottom: 0;
+  z-index: 1001;
+}
+
+.projectsHeader {
+  color: var(--orange);
+  top: 0;
+  z-index: 1000;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.cta {
+  margin-left: auto;
+  font-size: 20px;
+}

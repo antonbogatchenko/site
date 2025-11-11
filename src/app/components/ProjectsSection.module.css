@@ -1,8 +1,8 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: clamp(32px, 7vw, 60px);
   align-items: center;
+  margin-top: calc(var(--header-height) * -1);
 }
 
 .card {

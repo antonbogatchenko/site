@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./HeroSection.module.css";
+import { HeroHeader } from "./headers";
 
 export const HeroSection: React.FC = () => {
   return (
@@ -35,6 +36,7 @@ export const HeroSection: React.FC = () => {
           </p>
         </div>
       </article>
+      <HeroHeader />
     </section>
   );
 };
