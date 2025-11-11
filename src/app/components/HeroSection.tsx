@@ -5,7 +5,7 @@ import { HeroHeader } from "./headers";
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className={styles.section}>
+    <section id="contact" className={styles.section}>
       <article className={styles.hero}>
         <div className={styles.actions}>
           <a href="mailto:anton@antonbogatchenko.com">email</a>
