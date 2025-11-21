@@ -53,7 +53,7 @@ export const projects: Project[] = [
     description:
       "Dinner party photos for a Magu restaurnat in Helsinki, Finland.",
     accent: "#af5597",
-    variant: "gallery",
+    variant: "split-scroll-left",
     items: [
       {
         src: "/projects/Magu/Magu_dinner_people_-01.jpg",
