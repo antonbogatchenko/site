@@ -26,7 +26,7 @@ export const HeroSection: React.FC = () => {
           priority
         />
         <div className={styles.details}>
-          <p className={styles.title}>Anton Bogatchenko</p>
+          <h1 className={styles.title}>Anton Bogatchenko</h1>
           <p className={styles.description}>
             Based in Helsinki, Finland. Experienced in hospitality, events, and
             creative content. Available for projects locally and globally.

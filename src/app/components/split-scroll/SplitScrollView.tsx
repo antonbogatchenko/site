@@ -36,8 +36,9 @@ export const SplitScrollView: React.FC<SplitScrollViewProps> = ({
               src={item.src}
               alt={item.description}
               className={styles.projectImage}
-              width={400}
-              height={300}
+              width={0}
+              height={0}
+              sizes="(min-width: 960px) 30vw, 60vw"
             />
           </div>
         ))}

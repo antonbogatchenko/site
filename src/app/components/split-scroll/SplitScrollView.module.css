@@ -8,37 +8,96 @@
 .aside {
   flex-basis: 50%;
   background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  padding: 16px;
-  gap: 8px;
+  padding: clamp(18px, 4vw, 40px);
+  gap: clamp(12px, 2vw, 24px);
   height: var(--screen-height);
   position: sticky;
   top: var(--header-height);
 }
 
 .header {
-  font-size: 48px;
+  font-size: clamp(32px, 5vw, 56px);
 }
 
 .description {
   font-size: 18px;
   line-height: 1.6;
-  max-width: 400px;
+  max-width: 360px;
+  text-align: right;
 }
 
 .scroll {
   flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(32px, 6vw, 72px);
+  padding: clamp(24px, 6vw, 72px) 0;
 }
 
 .imageContainer {
-  height: var(--screen-height);
+  min-height: var(--screen-height);
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .projectImage {
+  width: 30vw;
+  height: auto;
+  max-width: 520px;
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--border-radius-sm);
+  border: var(--stroke-width) solid var(--ink);
+  background: var(--card);
+  object-fit: contain;
+}
+
+@media (max-width: 960px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .aside,
+  .scroll {
+    width: 100%;
+    flex-basis: 100%;
+    position: static;
+    height: auto;
+    min-height: auto;
+  }
+
+  .aside {
+    order: 0;
+    align-items: flex-start;
+    text-align: left;
+    min-height: 50vh;
+  }
+
+  .scroll {
+    order: 1;
+  }
+
+  .description {
+    text-align: left;
+  }
+
+  .scroll {
+    padding: clamp(20px, 4vw, 48px) 0;
+  }
+
+  .imageContainer {
+    min-height: auto;
+  }
+
+  .projectImage {
+    width: 90vw;
+  }
 }
