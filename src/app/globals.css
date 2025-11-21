@@ -9,6 +9,7 @@
   --font-basic: "Instrument Serif", "Georgia", "Times New Roman", serif;
   --font-primary: Arial, sans-serif;
   --header-height: 80px;
+  --screen-height: calc(100vh - var(--header-height));
 }
 
 html {

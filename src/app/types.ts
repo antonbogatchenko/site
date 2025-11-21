@@ -8,4 +8,5 @@ export interface Project {
   description: string;
   items: ProjectItem[];
   accent?: string;
+  variant?: "gallery" | "split-scroll" | "split-scroll-left";
 }

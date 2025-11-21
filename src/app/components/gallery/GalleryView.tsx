@@ -9,7 +9,7 @@ interface GalleryProps {
 
 export const GalleryView: React.FC<GalleryProps> = ({ project }) => (
   <article
-    className={styles.card}
+    className={styles.wrapper}
     style={
       {
         "--card-accent": project.accent
