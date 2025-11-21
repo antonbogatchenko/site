@@ -3,7 +3,7 @@
 import React, { useCallback, useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./ImageGallery.module.css";
-import { ProjectItem } from "../types";
+import { ProjectItem } from "../../types";
 
 interface ImageGalleryProps {
   items: ProjectItem[];

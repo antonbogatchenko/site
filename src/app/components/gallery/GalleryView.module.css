@@ -1,0 +1,40 @@
+.card {
+  position: relative;
+  padding: clamp(24px, 3vw, 40px);
+  background: linear-gradient(
+    160deg,
+    var(--card-accent, rgba(255, 228, 94, 0.1)),
+    #ffffff 66%
+  );
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.4vw, 24px);
+  margin-bottom: clamp(20px, 4vw, 40px);
+  min-height: calc(100vh - var(--header-height));
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2vw, 20px);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.name {
+  flex: 1;
+  text-transform: uppercase;
+  font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--foreground);
+}
