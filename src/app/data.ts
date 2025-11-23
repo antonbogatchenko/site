@@ -27,6 +27,10 @@ export const projects: Project[] = [
     accent: "#a95a24",
     items: [
       {
+        src: "/projects/Lobo/lobo_boreal_25-03-Felipe1.jpg",
+        description: "Lobo Boreal 05",
+      },
+      {
         src: "/projects/Lobo/lobo_boreal_25-07-hero.jpg",
         description: "Lobo Boreal 01",
       },
@@ -41,10 +45,6 @@ export const projects: Project[] = [
       {
         src: "/projects/Lobo/lobo_boreal_25-08-sweet2.jpg",
         description: "Lobo Boreal 04",
-      },
-      {
-        src: "/projects/Lobo/lobo_boreal_25-03-Felipe1.jpg",
-        description: "Lobo Boreal 05",
       },
     ],
   },
